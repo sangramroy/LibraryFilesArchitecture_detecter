@@ -7,15 +7,13 @@ This project is a lightweight C++ utility that scans a directory of `.so` (share
 ## 📁 Project Structure
 
 ```
-
 LibraryArchDetector/
-├── lib\_files/                     # Folder containing .so library files to analyze
-├── lib\_arch\_detector.cpp         # Main C++ source file
-├── arch\_detector.exe              # Compiled executable (after running make)
-├── Makefile                        # Makefile to build the program
-└── README.md                       # Project documentation
-
-````
+├── lib_files/                     # Folder containing .so library files to analyze
+├── lib_arch_detector.cpp         # Main C++ source file
+├── arch_detector                 # Compiled executable (after running make)
+├── Makefile                      # Makefile to build the program
+└── README.md                     # Project documentation
+```
 
 ---
 
@@ -23,39 +21,39 @@ LibraryArchDetector/
 
 The tool supports detecting the following ELF architectures:
 
-- **armeabi-v7a** — ARM 32-bit
-- **arm64-v8a** — ARM 64-bit (AArch64)
-- **x86** — Intel 80386 (32-bit)
-- **x86-64** — AMD x86-64 (64-bit)
-- **mips** — MIPS processors
+* **armeabi-v7a** — ARM 32-bit
+* **arm64-v8a** — ARM 64-bit (AArch64)
+* **x86** — Intel 80386 (32-bit)
+* **x86-64** — AMD x86-64 (64-bit)
+* **mips** — MIPS processors
 
 ---
 
-## ⚙️ Build Instructions
+## ⚙️ Build Instructions (for Linux / WSL)
 
-> **Requirements:**  
-> - MSYS2 installed on Windows  
-> - Use the **UCRT64** shell  
-> - GCC compiler with C++17 or higher support
+> **Requirements:**
+>
+> * Ubuntu (or any Linux distribution) via WSL or native
+> * GCC compiler with C++17 or higher
 
 ### 🛠 Steps
 
 ```bash
-# Open MSYS2 UCRT64 terminal
-cd LibraryArchDetector
+# Open your WSL terminal
+cd ~/path/to/LibraryArchDetector
 make
-````
+```
 
-This will compile `lib_arch_detector.cpp` and produce `arch_detector.exe`.
+This will compile `lib_arch_detector.cpp` and produce an executable named `arch_detector`.
 
 ---
 
 ## 🚀 How to Run
 
-Run the program by passing the path to the folder containing `.so` files:
+Pass the folder path containing `.so` files as an argument:
 
 ```bash
-./arch_detector.exe lib_files/
+./arch_detector lib_files/
 ```
 
 ### 🖥 Example Output
